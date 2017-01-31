@@ -17,7 +17,7 @@ function getRandomArbitary(min, max)
 
 var comp1 = [];// пустой массв для _mp_S_1_rend
 
-var kolfile_mp4=38;
+var kolfile_mp4=39;
 
 var path1 = "./ish/index.mp4";// оспова ролика первый файл путь к нему
 var io1 = new ImportOptions(File(path1));
@@ -51,7 +51,7 @@ for (var i = 1; i <= 7; i++) {//цикл повторяется 7, по коли
     var durationAll = (x1.duration+x3.duration-11);
     if (durationRol-durationAll > 0) {
         comp1[i].layers.add(x5);
-        myFunc(app.project.item(i).layer(2), durationAll-5);
+        myFunc(app.project.item(i).layer(1), durationAll-5);
         //break;
     };
         
