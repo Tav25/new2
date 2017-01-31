@@ -17,7 +17,9 @@ function getRandomArbitary(min, max)
 
 var comp1 = [];// пустой массв для _mp_S_1_rend
 
-var path1 = "../ish/index.mp4";// оспова ролика первый файл путь к нему
+var kolfile_mp4=38;
+
+var path1 = "./ish/index.mp4";// оспова ролика первый файл путь к нему
 var io1 = new ImportOptions(File(path1));
 var x1 = app.project.importFile(io1); // index.mp4 загружаем ролик 
 var durationIndex = app.project.item(1).duration;
@@ -26,22 +28,22 @@ for (var i = 1; i <= 7; i++) {//цикл повторяется 7, по коли
     var durationRol = getRandomArbitary(610, 630);
     comp1[i] = app.project.items.addComp('_mp_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
    
-    var path2 = "../logo/logo_"+i+".psd"; // путь к файлу с логотипом
+    var path2 = "./logo/logo_"+i+".psd"; // путь к файлу с логотипом
     var io2 = new ImportOptions(File(path2));
     var x2 = app.project.importFile(io2);//.логотип загружаем
     
-    var rand_mp4 = Math.round(getRandomArbitary(1, 37));
-    var path3 = "../ish/ish_"+rand_mp4+".mp4"; // путь к файлу 2 изменить на рандом
+    var rand_mp4 = Math.round(getRandomArbitary(1, kolfile_mp4));
+    var path3 = "./ish/ish_"+rand_mp4+".mp4"; // путь к файлу 2 изменить на рандом
     var io3 = new ImportOptions(File(path3));
     var x3 = app.project.importFile(io3);//.загружаем mp4 второй
     
     var rand_mp5 = Math.round(getRandomArbitary(1, 37));
-    var path5 = "../ish/ish_"+rand_mp5+".mp4"; // путь к файлу 3 изменить на рандом
+    var path5 = "./ish/ish_"+rand_mp5+".mp4"; // путь к файлу 3 изменить на рандом
     var io5 = new ImportOptions(File(path5));
     var x5 = app.project.importFile(io5);//.загружаем mp4 третий
     
     var rand_mp3 = Math.round(getRandomArbitary(1, 9));
-    var path4 = "../sound/"+rand_mp3+".mp3"; // путь к файлу 2
+    var path4 = "./sound/"+rand_mp3+".mp3"; // путь к файлу 2
     var io4 = new ImportOptions(File(path4));
     var x4 = app.project.importFile(io4);//.загружаем mp4 второй
     
