@@ -14,6 +14,12 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+*.mp4
+*.mp3
+*.psd
+*.aep
+*pass*.*
+
 # Windows shortcuts
 *.lnk
 
