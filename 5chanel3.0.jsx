@@ -1,4 +1,5 @@
 ﻿////////////////////////////////////////////////////////////////
+#target afterEffects
 
 function myFunc(theObject, t) 
 {
@@ -24,7 +25,7 @@ var io1 = new ImportOptions(File(path1));
 var x1 = app.project.importFile(io1); // index.mp4 загружаем ролик 
 var durationIndex = app.project.item(1).duration;
 ////////////////////////////////////////////////////////////
-for (var i = 1; i <= 7; i++) {//цикл повторяется 7, по количеству логотипов и каналов
+for (var i = 1; i <= 1; i++) {//цикл повторяется 7, по количеству логотипов и каналов
     var durationRol = getRandomArbitary(610, 630);
     comp1[i] = app.project.items.addComp('_mp_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
    
