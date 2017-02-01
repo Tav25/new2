@@ -46,23 +46,24 @@ for (var i = 1; i <= 1; i++) {//цикл повторяется 7, по коли
     var rand_mp3 = Math.round(getRandomArbitary(1, 9));
     var path4 = "./sound/"+rand_mp3+".mp3"; // путь к файлу 2
     var io4 = new ImportOptions(File(path4));
-    var x4 = app.project.importFile(io4);//.загружаем mp4 второй
+    var x4_sound = app.project.importFile(io4);//.загружаем mp4 второй
     
-    comp1[i].layers.add(x4); 
-    app.project.item(i).layer(1).outPoint=300
-
-    comp1[i].layers.add(x5);
-    myFunc(app.project.item(i).layer(1), durationAll-5);
-    app.project.item(i).layer(1).outPoint=300
-
-        
-    comp1[i].layers.add(x3);
-    comp1[i].layers.add(x1); //в группу вставяем видео в обратном порядке, после станет нижним слоем
-    comp1[i].layers.add(x2);// затем ваставляем логотип 
+    comp1[i].layers.add(x4_sound); //l5
+    comp1[i].layers.add(x5);//3 l4
+    comp1[i].layers.add(x3);//2 l3
+    comp1[i].layers.add(x1); //1 l2
+    comp1[i].layers.add(x2);//logo l1
     
     myFunc(app.project.item(i).layer(2), -6);
-    myFunc(app.project.item(i).layer(3), durationIndex-11);
+    myFunc(app.project.item(i).layer(3), (app.project.item(i).layer(2).outPoint)-5);
+    myFunc(app.project.item(i).layer(4), (app.project.item(i).layer(3).outPoint)-5);
     
+    
+    app.project.item(i).layer(1).outPoint=durationRol;
+    app.project.item(i).layer(2).outPoint=durationRol;
+    app.project.item(i).layer(3).outPoint=durationRol;
+    app.project.item(i).layer(4).outPoint=durationRol;
+    app.project.item(i).layer(5).outPoint=durationRol;
 
     app.project.renderQueue.items.add(comp1[i]);// отправляем очередь рендинга
     
