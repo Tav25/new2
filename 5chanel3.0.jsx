@@ -49,12 +49,12 @@ for (var i = 1; i <= 1; i++) {//цикл повторяется 7, по коли
     var x4 = app.project.importFile(io4);//.загружаем mp4 второй
     
     comp1[i].layers.add(x4); 
-    var durationAll = (x1.duration+x3.duration-11);
-    if (durationRol-durationAll > 0) {
-        comp1[i].layers.add(x5);
-        myFunc(app.project.item(i).layer(1), durationAll-5);
-        //break;
-    };
+    app.project.item(i).layer(1).outPoint=300
+
+    comp1[i].layers.add(x5);
+    myFunc(app.project.item(i).layer(1), durationAll-5);
+    app.project.item(i).layer(1).outPoint=300
+
         
     comp1[i].layers.add(x3);
     comp1[i].layers.add(x1); //в группу вставяем видео в обратном порядке, после станет нижним слоем
