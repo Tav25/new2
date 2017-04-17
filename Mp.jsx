@@ -20,14 +20,16 @@ var comp1 = [];// пустой массв для _mp_S_1_rend
 
 var kolfile_mp4=39;
 
+   
+
 ////////////////////////////////////////////////////////////
-for (var i = 1; i <=5; i++) {//цикл повторяется 7, по количеству логотипов и каналов
+for (var i = 1; i <=3; i++) {//цикл повторяется 7, по количеству логотипов и каналов
     
-    var path1 = "./ish/ish_"+rand_mp4+".mp4"; // путь к файлу 1 изменить на рандом
+   var path1 = "./ish/ish_"+rand_mp4+".mp4"; // путь к файлу 1 изменить на рандом
     //var path1 = "./ish/index.mp4";// основа ролика первый файл путь к нему
     var io1 = new ImportOptions(File(path1));
     var x1 = app.project.importFile(io1); // index.mp4 загружаем ролик 
-    var durationIndex = app.project.item(1).duration;    
+    //var durationIndex = app.project.item(1).duration/2;  
     
     
     var durationRol = getRandomArbitary(610, 630);
@@ -58,13 +60,15 @@ for (var i = 1; i <=5; i++) {//цикл повторяется 7, по коли�
     comp1[i].layers.add(x1); //1 l2
     comp1[i].layers.add(x2);//logo l1
     
+    dd=getRandomArbitary(181, 201)
+    app.project.item(i).layer(2).outPoint=dd;//dlinna gthdjuj hjkbrf
     myFunc(app.project.item(i).layer(2), -6);
     myFunc(app.project.item(i).layer(3), (app.project.item(i).layer(2).outPoint)-5);
     myFunc(app.project.item(i).layer(4), (app.project.item(i).layer(3).outPoint)-5);
     
     
     app.project.item(i).layer(1).outPoint=durationRol;
-    app.project.item(i).layer(2).outPoint=durationRol;
+    app.project.item(i).layer(2).outPoint=dd;
     app.project.item(i).layer(3).outPoint=durationRol;
     app.project.item(i).layer(4).outPoint=durationRol;
     app.project.item(i).layer(5).outPoint=durationRol;
