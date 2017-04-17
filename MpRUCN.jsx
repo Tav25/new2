@@ -60,15 +60,15 @@ for (var i = 1; i <=5; i++) {//цикл повторяется 7, по коли�
     comp1[i].layers.add(x1); //1 l2
     comp1[i].layers.add(x2);//logo l1
     
-    dd=getRandomArbitary(181, 201)
-    app.project.item(i).layer(2).outPoint=dd;//dlinna pervogo rolika
-    myFunc(app.project.item(i).layer(2), -6);
-    myFunc(app.project.item(i).layer(3), (app.project.item(i).layer(2).outPoint)-5);
-    myFunc(app.project.item(i).layer(4), (app.project.item(i).layer(3).outPoint)-5);
+    //dd=getRandomArbitary(181, 201)
+    //app.project.item(i).layer(2).outPoint=dd;//dlinna pervogo rolika
+    //myFunc(app.project.item(i).layer(2), -6);
+    //myFunc(app.project.item(i).layer(3), (app.project.item(i).layer(2).outPoint)-5);
+    //myFunc(app.project.item(i).layer(4), (app.project.item(i).layer(3).outPoint)-5);
     
     
     app.project.item(i).layer(1).outPoint=durationRol;
-    app.project.item(i).layer(2).outPoint=dd;
+    app.project.item(i).layer(2).outPoint=durationRol;
     app.project.item(i).layer(3).outPoint=durationRol;
     app.project.item(i).layer(4).outPoint=durationRol;
     app.project.item(i).layer(5).outPoint=durationRol;
