@@ -20,16 +20,20 @@ var comp1 = [];// пустой массв для _mp_S_1_rend
 
 var kolfile_mp4=39;
 
-var path1 = "./ish/index.mp4";// оспова ролика первый файл путь к нему
-var io1 = new ImportOptions(File(path1));
-var x1 = app.project.importFile(io1); // index.mp4 загружаем ролик 
-var durationIndex = app.project.item(1).duration;
 ////////////////////////////////////////////////////////////
-for (var i = 1; i <= 7; i++) {//цикл повторяется 7, по количеству логотипов и каналов
+for (var i = 1; i <=5; i++) {//цикл повторяется 7, по количеству логотипов и каналов
+    
+    var path1 = "./ish/ish_"+rand_mp4+".mp4"; // путь к файлу 1 изменить на рандом
+    //var path1 = "./ish/index.mp4";// основа ролика первый файл путь к нему
+    var io1 = new ImportOptions(File(path1));
+    var x1 = app.project.importFile(io1); // index.mp4 загружаем ролик 
+    var durationIndex = app.project.item(1).duration;    
+    
+    
     var durationRol = getRandomArbitary(610, 630);
     comp1[i] = app.project.items.addComp('_mp_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
    
-    var path2 = "./logo/logo_"+i+".psd"; // путь к файлу с логотипом
+    var path2 = "./logo/logo_1.psd"; // путь к файлу с логотипом Мульт парада
     var io2 = new ImportOptions(File(path2));
     var x2 = app.project.importFile(io2);//.логотип загружаем
     
