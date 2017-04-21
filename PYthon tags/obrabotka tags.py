@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-fil='obrabotka tags.txt'
+fil='spis.txt'
 i=0
 x=[]
 y=[]
