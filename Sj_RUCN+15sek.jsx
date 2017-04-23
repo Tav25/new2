@@ -34,9 +34,9 @@ for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по ко�
     
     
     var durationRol = getRandomArbitary(610, 630);
-    comp1[i] = app.project.items.addComp('_mp_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
+    comp1[i] = app.project.items.addComp('_sj_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
    
-    var path2 = "./logo/logo_1.psd"; // путь к файлу с логотипом Мульт парада
+    var path2 = "./logo/logo_2.psd"; // путь к файлу с логотипом Мульт парада
     var io2 = new ImportOptions(File(path2));
     var x2 = app.project.importFile(io2);//.логотип загружаем
     
@@ -100,7 +100,7 @@ for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по ко�
 	var l = new Date();
 
 	
-    var f = new File("arhiv_MP/MP_"+l.toLocaleDateString()+".aep");// сохраняем все изменения
+    var f = new File("arhiv_MP/SJ_"+l.toLocaleDateString()+".aep");// сохраняем все изменения
     app.project.save(f);
 
 }
