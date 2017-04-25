@@ -17,7 +17,7 @@ function getRandomArbitary(min, max)
 
 var comp1 = [];// пустой массв для _mp_S_1_rend
 
-var kolfile_mp4=39;
+var kolfile_mp4=41;
 
    
 
@@ -74,8 +74,14 @@ for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по ко�
 	
 	
     dd=getRandomArbitary(176, 186)
-	if (app.project.item(i).layer(3).outPoint+app.project.item(i).layer(4).outPoint+app.project.item(i).layer(5).outPoint < durationRol-9){
-		alert('жопа');
+	if (app.project.item(i).layer(3).outPoint < dd){
+		alert('жопа1');
+	}
+	if (app.project.item(i).layer(4).outPoint < dd){
+		alert('жопа2');
+	}
+	if (app.project.item(i).layer(5).outPoint < dd){
+		alert('жопа3');
 	}
 	
 

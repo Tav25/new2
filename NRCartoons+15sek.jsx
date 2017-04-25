@@ -22,7 +22,7 @@ var kolfile_mp4=41;
    
 
 ////////////////////////////////////////////////////////////
-for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по количеству логотипов и каналов
+for (var i = 1; i <=5; i++) {//<=5 цикл повторяется 7, по количеству логотипов и каналов
     
 	var rand_mp4 = Math.round(getRandomArbitary(1, kolfile_mp4))
     
@@ -34,9 +34,9 @@ for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по ко�
     
     
     var durationRol = getRandomArbitary(610, 630);
-    comp1[i] = app.project.items.addComp('_sj_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
+    comp1[i] = app.project.items.addComp('_NRS_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
    
-    var path2 = "./logo/logo_2.psd"; // путь к файлу с логотипом Мульт парада
+    var path2 = "./logo/logo_3.psd"; // путь к файлу с логотипом Мульт парада
     var io2 = new ImportOptions(File(path2));
     var x2 = app.project.importFile(io2);//.логотип загружаем
     
@@ -52,7 +52,7 @@ for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по ко�
 	
 	//
 	//var rand_mp5 = Math.round(getRandomArbitary(1, 37));
-    var path15s = "./ish/15sek2.mp4"; // путь к файлу 3 изменить на рандом
+    var path15s = "./ish/15sek3.mp4"; // путь к файлу 3 изменить на рандом
     var s15 = new ImportOptions(File(path15s));
     var x15 = app.project.importFile(s15);//.загружаем mp4 третий
 	//
@@ -61,9 +61,13 @@ for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по ко�
     var path4 = "./sound/"+rand_mp3+".mp3"; // путь к файлу 2
     var io4 = new ImportOptions(File(path4));
     var x4_sound = app.project.importFile(io4);//.загружаем mp4 второй
+	
+	var nuvvid = "./nuvvid/"+i+".png"; // путь к файлу 
+    var nuvvid_io = new ImportOptions(File(nuvvid));
+    var x_nuvvid = app.project.importFile(nuvvid_io);// загружаем
     
     comp1[i].layers.add(x4_sound); //l5
-	
+	comp1[i].layers.add(x_nuvvid);//счетчик
     comp1[i].layers.add(x5);//3 l4
     comp1[i].layers.add(x3);//2 l3
     comp1[i].layers.add(x1); //1 l2
@@ -71,9 +75,10 @@ for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по ко�
     comp1[i].layers.add(x2);//logo l1
 	
 	myFunc(app.project.item(i).layer(2), (app.project.item(i).layer(1).outPoint)-10); //начало ролика 15сек -10секунд от конца
+	myFunc(app.project.item(i).layer(6), (app.project.item(i).layer(1).outPoint)-5);
+	app.project.item(i).layer(6).scale.setValue([100, 100]);
 	
 	
-    dd=getRandomArbitary(176, 186)
     dd=getRandomArbitary(176, 186)
 	if (app.project.item(i).layer(3).outPoint < dd){
 		alert('жопа1');
@@ -99,15 +104,16 @@ for (var i = 1; i <=7; i++) {//<=5 цикл повторяется 7, по ко�
     
     
     app.project.item(i).layer(1).outPoint=durationRol;//обрезка по длинне клипа
-    app.project.item(i).layer(2).outPoint=durationRol;
+    app.project.item(i).layer(2).outPoint=durationRol-1;
     app.project.item(i).layer(6).outPoint=durationRol;
+	app.project.item(i).layer(7).outPoint=durationRol;
 
     app.project.renderQueue.items.add(comp1[i]);// отправляем очередь рендинга
     
 	var l = new Date();
 
 	
-    var f = new File("arhiv_MP/SJ_"+l.toLocaleDateString()+".aep");// сохраняем все изменения
+    var f = new File("arhiv_MP/NRS_"+l.toLocaleDateString()+".aep");// сохраняем все изменения
     app.project.save(f);
 
 }
