@@ -1,6 +1,7 @@
 ﻿////////////////////////////////////////////////////////////////
 #target afterEffects
-
+var chan=1;
+var name_chan = [ 'zero', 'MP', 'SJ','NRC',];//
 function myFunc(theObject, t) 
 {
    theObject.scale.setValue([101, 101]);
@@ -34,9 +35,9 @@ for (var i = 1; i <=5; i++) {//<=5 цикл повторяется 7, по ко�
     
     
     var durationRol = getRandomArbitary(610, 630);
-    comp1[i] = app.project.items.addComp('_NRS_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
+    comp1[i] = app.project.items.addComp('_'+name_chan[chan]+'_S_'+i+'_rend', 1920, 1080, 1, durationRol, 30);  // создаем _mp_S_1_rend так будет называться файл на выхоле после рендинга
    
-    var path2 = "./logo/logo_3.psd"; // путь к файлу с логотипом Мульт парада
+    var path2 = "./logo/logo_"+chan+".psd"; // путь к файлу с логотипом Мульт парада
     var io2 = new ImportOptions(File(path2));
     var x2 = app.project.importFile(io2);//.логотип загружаем
     
@@ -52,7 +53,7 @@ for (var i = 1; i <=5; i++) {//<=5 цикл повторяется 7, по ко�
 	
 	//
 	//var rand_mp5 = Math.round(getRandomArbitary(1, 37));
-    var path15s = "./ish/15sek3.mp4"; // путь к файлу 3 изменить на рандом
+    var path15s = "./ish/15sek"+chan+".mp4"; // путь к файлу 3 изменить на рандом
     var s15 = new ImportOptions(File(path15s));
     var x15 = app.project.importFile(s15);//.загружаем mp4 третий
 	//
@@ -113,7 +114,7 @@ for (var i = 1; i <=5; i++) {//<=5 цикл повторяется 7, по ко�
 	var l = new Date();
 
 	
-    var f = new File("arhiv_MP/NRS_"+l.toLocaleDateString()+".aep");// сохраняем все изменения
+    var f = new File("arhiv_MP/"+name_chan[chan]+"_"+l.toLocaleDateString()+".aep");// сохраняем все изменения
     app.project.save(f);
 
 }
