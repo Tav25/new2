@@ -1,7 +1,8 @@
 ﻿////////////////////////////////////////////////////////////////
 #target afterEffects
+
 var chan=1;
-var name_chan = [ 'zero', 'MP', 'SJ','NRC',];//
+var name_chan = [ 'zero', 'MP', 'SJ','NRC',];//названия каналов
 function myFunc(theObject, t) 
 {
    theObject.scale.setValue([101, 101]);
@@ -77,7 +78,7 @@ for (var i = 1; i <=5; i++) {//<=5 цикл повторяется 7, по ко�
 	
 	myFunc(app.project.item(i).layer(2), (app.project.item(i).layer(1).outPoint)-10); //начало ролика 15сек -10секунд от конца
 	myFunc(app.project.item(i).layer(6), (app.project.item(i).layer(1).outPoint)-5);
-	app.project.item(i).layer(6).scale.setValue([100, 100]);
+	app.project.item(i).layer(6).scale.setValue([100, 100]);//размер 100процентов
 	
 	
     dd=getRandomArbitary(176, 186)
