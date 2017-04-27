@@ -1,7 +1,7 @@
 ﻿////////////////////////////////////////////////////////////////
 #target afterEffects
 
-var chan=1;
+var chan=3;
 var name_chan = [ 'zero', 'MP', 'SJ','NRC',];//названия каналов
 function myFunc(theObject, t) 
 {
