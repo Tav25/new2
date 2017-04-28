@@ -13,7 +13,7 @@ for line in open(fil):
                         if sl==line:
                                 i2=i2+1
                                 #print(i2)
-                if i2>50:#
+                if i2>1:#
                         x.append(f)
                         y.append(i2)
         i=i+1
