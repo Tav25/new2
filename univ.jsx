@@ -1,12 +1,12 @@
 ﻿////////////////////////////////////////////////////////////////
 #target afterEffects
 
-var chan=1;
+var chan=2;
 var name_chan = [ 'zero', 'MP', 'SJ','NRC',];//названия каналов
 function myFunc(theObject, t) 
 {
    theObject.scale.setValue([101, 101]);
-   theObject.stretch = 100;
+   theObject.stretch = 125;
    theObject.startTime=t;
  };
 
@@ -94,7 +94,8 @@ for (var i = 1; i <=9; i++) {//<=5 цикл повторяется 7, по ко�
 	
 
 	//1й ролик начало -4 конец dd
-	myFunc(app.project.item(i).layer(3), -8);	
+	var rand_nach1rolika = Math.round(getRandomArbitary(8, 40));
+	myFunc(app.project.item(i).layer(3), (rand_nach1rolika)*-1);	
     app.project.item(i).layer(3).outPoint=dd;//dlinna pervogo rolika
 	//2й
     myFunc(app.project.item(i).layer(4), dd-6);
