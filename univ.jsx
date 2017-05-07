@@ -1,7 +1,7 @@
 ﻿////////////////////////////////////////////////////////////////
 #target afterEffects
 
-var chan=3;
+var chan=1;
 var name_chan = [ 'zero', 'MP', 'SJ','NRC',];//названия каналов
 function myFunc(theObject, t) 
 {
@@ -24,7 +24,7 @@ var kolfile_mp4=41;
    
 
 ////////////////////////////////////////////////////////////
-for (var i = 1; i <=5; i++) {//<=5 цикл повторяется 7, по количеству логотипов и каналов
+for (var i = 1; i <=9; i++) {//<=5 цикл повторяется 7, по количеству логотипов и каналов
     
 	var rand_mp4 = Math.round(getRandomArbitary(1, kolfile_mp4))
     
