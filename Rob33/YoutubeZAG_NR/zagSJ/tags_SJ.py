@@ -63,7 +63,8 @@ f = open('tag.txt','w')
 f2 = open('tit.txt','w')
 
 i=0
-w=input('kolichestvo simvolov: ')
+#w=input('kolichestvo simvolov: ')
+w=120
 while i<big_x:
         kolsimv+=big[i]
         if len(kolsimv)<20:
